@@ -92,5 +92,18 @@ Implementation of Block RAM.
 
 ---
 
-## Homework
+## Session_assignment
 - Design and implement Dual-Port BRAM.
+## Dual Port BRAM
+
+Dual Port Block RAM allows simultaneous access to memory through two independent ports.
+
+### Features
+- Two independent read/write ports
+- Supports parallel memory access
+- Improves throughput
+- Commonly used in FIFOs, buffers, and DSP applications
+
+### Verilog Files
+- `dual_port_bram.v`
+- `dual_port_bram_tb.v`
