@@ -107,3 +107,13 @@ Dual Port Block RAM allows simultaneous access to memory through two independent
 ### Verilog Files
 - `dual_port_bram.v`
 - `dual_port_bram_tb.v`
+
+---
+
+## Reading Materials
+
+### DSP Slices (DSP48E1)
+https://docs.amd.com/v/u/en-US/ug479_7Series_DSP48E1
+
+### Block RAM (BRAM)
+https://docs.amd.com/r/en-US/ug953-vivado-7series-libraries/RAMB36E1
