@@ -46,7 +46,10 @@ Since DSP48E1 supports a 25 × 18 multiplier, larger multiplications such as 32 
 ---
 
 ## Verilog Example
-File: `mult.v`
+Files: 
+- `mult_18x18.v`
+- `mult_32x32.v`
+- `mac.v`
 
 Implemented multiplication operation using DSP resources.
 
@@ -81,7 +84,9 @@ FIFO (First In First Out) buffers are commonly implemented using BRAM.
 - Streaming applications
 
 ## Verilog Example
-File: `block_ram.v`
+Files:
+- `block_ram.v`
+- `block_ram_tb.v`
 
 Implementation of Block RAM.
 
