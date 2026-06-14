@@ -85,8 +85,8 @@ FIFO (First In First Out) buffers are commonly implemented using BRAM.
 
 ## Verilog Example
 Files:
-- `block_ram.v`
-- `block_ram_tb.v`
+- `block_ram_synchronous.v`
+- `block_ram_sync_rw_tb.v`
 
 Implementation of Block RAM.
 
