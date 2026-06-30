@@ -87,10 +87,10 @@ The project adheres to a strict hierarchical design methodology. The `top_module
 ### 1. Bidirectional Physical-Layer Interface
 The DHT11 utilizes a single shared wire for communication. To prevent electrical contention and hardware damage to the FPGA I/O buffers, the controller actively handles tri-state impedance selection logic using high-impedance mode assignment:
 
-``verilog
+```verilog
 // Tri-state buffer logic inside top_module.v
 assign dht_data = (dht_dir) ? dht_out : 1'bZ;
-
+```
 When dht_dir drops to 0, the FPGA line floats safely into high-impedance listening mode, allowing the external pull-up resistor on the Anmaya board to manage voltage fluctuations triggered by the sensor.
 
 ### 2. Time-Domain Boundary Integrity
