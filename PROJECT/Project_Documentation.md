@@ -23,6 +23,7 @@ The project adheres to a strict hierarchical design methodology. The `top_module
 
 ## 🎨 Structural System Block Diagram
 
+```text
  ┌────────────────────────────────────────────────────────────────────────────────────────┐
  │                                       TOP_MODULE                                       │
  │                                                                                        │
@@ -66,6 +67,7 @@ The project adheres to a strict hierarchical design methodology. The `top_module
                                                  ▼
                                         🔔 BUZZER & LEDS
 
+```
 ### 📦 Module Descriptions
 
 | File Name | Functional Description |
@@ -101,7 +103,7 @@ Operating under a native system clock speed of 24 MHz, each single clock cycle t
 ### 3. Dual-Pulse Phase Switching Log Logic
 To interface back-to-back environmental attributes cleanly into a single unified data bus for storage, `data_logger.v` utilizes an independent single-wire dual-phase register (`fifo_phase`). When a high pulse from `data_valid` triggers, it sets off an atomic two-step sequential routing sweep:
 
-``verilog
+```verilog
 // Exact Logging Framework in data_logger.v
 if (data_valid && !fifo_phase) begin
     fifo_din   <= temperature;
@@ -113,6 +115,7 @@ else if (fifo_phase) begin
     fifo_wr_en <= 1'b1;
     fifo_phase <= 1'b0;
 end
+```
 
 ### ⌨️ UART User Console Interface
 
