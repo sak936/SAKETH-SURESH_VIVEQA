@@ -23,7 +23,6 @@ The project adheres to a strict hierarchical design methodology. The `top_module
 
 ## 🎨 Structural System Block Diagram
 
-```text
  ┌────────────────────────────────────────────────────────────────────────────────────────┐
  │                                       TOP_MODULE                                       │
  │                                                                                        │
@@ -86,7 +85,7 @@ The project adheres to a strict hierarchical design methodology. The `top_module
 ### 1. Bidirectional Physical-Layer Interface
 The DHT11 utilizes a single shared wire for communication. To prevent electrical contention and hardware damage to the FPGA I/O buffers, the controller actively handles tri-state impedance selection logic using high-impedance mode assignment:
 
-```verilog
+``verilog
 // Tri-state buffer logic inside top_module.v
 assign dht_data = (dht_dir) ? dht_out : 1'bZ;
 
@@ -102,7 +101,7 @@ Operating under a native system clock speed of 24 MHz, each single clock cycle t
 ### 3. Dual-Pulse Phase Switching Log Logic
 To interface back-to-back environmental attributes cleanly into a single unified data bus for storage, `data_logger.v` utilizes an independent single-wire dual-phase register (`fifo_phase`). When a high pulse from `data_valid` triggers, it sets off an atomic two-step sequential routing sweep:
 
-```verilog
+``verilog
 // Exact Logging Framework in data_logger.v
 if (data_valid && !fifo_phase) begin
     fifo_din   <= temperature;
